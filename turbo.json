@@ -1,0 +1,14 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "typecheck": {},
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "kuyacode#test": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    }
+  }
+}

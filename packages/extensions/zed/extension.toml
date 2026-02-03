@@ -1,0 +1,36 @@
+id = "kuyacode"
+name = "KuyaCode"
+description = "The open source coding agent."
+version = "1.1.25"
+schema_version = 1
+authors = ["Anomaly"]
+repository = "https://github.com/anomalyco/kuyacode"
+
+[agent_servers.kuyacode]
+name = "KuyaCode"
+icon = "./icons/kuyacode.svg"
+
+[agent_servers.kuyacode.targets.darwin-aarch64]
+archive = "https://github.com/anomalyco/kuyacode/releases/download/v1.1.25/kuyacode-darwin-arm64.zip"
+cmd = "./kuyacode"
+args = ["acp"]
+
+[agent_servers.kuyacode.targets.darwin-x86_64]
+archive = "https://github.com/anomalyco/kuyacode/releases/download/v1.1.25/kuyacode-darwin-x64.zip"
+cmd = "./kuyacode"
+args = ["acp"]
+
+[agent_servers.kuyacode.targets.linux-aarch64]
+archive = "https://github.com/anomalyco/kuyacode/releases/download/v1.1.25/kuyacode-linux-arm64.tar.gz"
+cmd = "./kuyacode"
+args = ["acp"]
+
+[agent_servers.kuyacode.targets.linux-x86_64]
+archive = "https://github.com/anomalyco/kuyacode/releases/download/v1.1.25/kuyacode-linux-x64.tar.gz"
+cmd = "./kuyacode"
+args = ["acp"]
+
+[agent_servers.kuyacode.targets.windows-x86_64]
+archive = "https://github.com/anomalyco/kuyacode/releases/download/v1.1.25/kuyacode-windows-x64.zip"
+cmd = "./kuyacode.exe"
+args = ["acp"]
