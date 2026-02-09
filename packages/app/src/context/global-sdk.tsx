@@ -1,4 +1,4 @@
-import { createOpencodeClient, type Event } from "@kuyacode-ai/sdk/v2/client"
+import { createKuyaCodeClient, type Event } from "@kuyacode-ai/sdk/v2/client"
 import { createSimpleContext } from "@kuyacode-ai/ui/context"
 import { createGlobalEmitter } from "@solid-primitives/event-bus"
 import { batch, onCleanup } from "solid-js"
@@ -12,7 +12,7 @@ export const { use: useGlobalSDK, provider: GlobalSDKProvider } = createSimpleCo
     const platform = usePlatform()
     const abort = new AbortController()
 
-    const eventSdk = createOpencodeClient({
+    const eventSdk = createKuyaCodeClient({
       baseUrl: server.url,
       signal: abort.signal,
       fetch: platform.fetch,
@@ -95,7 +95,7 @@ export const { use: useGlobalSDK, provider: GlobalSDKProvider } = createSimpleCo
       stop()
     })
 
-    const sdk = createOpencodeClient({
+    const sdk = createKuyaCodeClient({
       baseUrl: server.url,
       fetch: platform.fetch,
       throwOnError: true,

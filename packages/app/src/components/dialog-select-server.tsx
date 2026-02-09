@@ -8,13 +8,13 @@ import { Button } from "@kuyacode-ai/ui/button"
 import { IconButton } from "@kuyacode-ai/ui/icon-button"
 import { normalizeServerUrl, serverDisplayName, useServer } from "@/context/server"
 import { usePlatform } from "@/context/platform"
-import { createOpencodeClient } from "@kuyacode-ai/sdk/v2/client"
+import { createKuyaCodeClient } from "@kuyacode-ai/sdk/v2/client"
 import { useNavigate } from "@solidjs/router"
 
 type ServerStatus = { healthy: boolean; version?: string }
 
 async function checkHealth(url: string, fetch?: typeof globalThis.fetch): Promise<ServerStatus> {
-  const sdk = createOpencodeClient({
+  const sdk = createKuyaCodeClient({
     baseUrl: url,
     fetch,
     signal: AbortSignal.timeout(3000),

@@ -7,7 +7,7 @@ import { bootstrap } from "../bootstrap"
 import { Command } from "../../command"
 import { EOL } from "os"
 import { select } from "@clack/prompts"
-import { createOpencodeClient, type OpencodeClient } from "@kuyacode-ai/sdk/v2"
+import { createKuyaCodeClient, type KuyaCodeClient } from "@kuyacode-ai/sdk/v2"
 import { Server } from "../../server/server"
 import { Provider } from "../../provider/provider"
 import { Agent } from "../../agent/agent"
@@ -133,7 +133,7 @@ export const RunCommand = cmd({
       process.exit(1)
     }
 
-    const execute = async (sdk: OpencodeClient, sessionID: string) => {
+    const execute = async (sdk: KuyaCodeClient, sessionID: string) => {
       const printEvent = (color: string, type: string, title: string) => {
         UI.println(
           color + `|`,
@@ -276,7 +276,7 @@ export const RunCommand = cmd({
     }
 
     if (args.attach) {
-      const sdk = createOpencodeClient({ baseUrl: args.attach })
+      const sdk = createKuyaCodeClient({ baseUrl: args.attach })
 
       const sessionID = await (async () => {
         if (args.continue) {
@@ -343,7 +343,7 @@ export const RunCommand = cmd({
         const request = new Request(input, init)
         return Server.App().fetch(request)
       }) as typeof globalThis.fetch
-      const sdk = createOpencodeClient({ baseUrl: "http://kuyacode.internal", fetch: fetchFn })
+      const sdk = createKuyaCodeClient({ baseUrl: "http://kuyacode.internal", fetch: fetchFn })
 
       if (args.command) {
         const exists = await Command.get(args.command)

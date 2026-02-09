@@ -28,9 +28,9 @@ npm install @kuyacode-ai/sdk
 Create an instance of kuyacode:
 
 ```javascript
-import { createOpencode } from "@kuyacode-ai/sdk"
+import { createKuyaCode } from "@kuyacode-ai/sdk"
 
-const { client } = await createOpencode()
+const { client } = await createKuyaCode()
 ```
 
 This starts both a server and a client
@@ -52,9 +52,9 @@ This starts both a server and a client
 You can pass a configuration object to customize behavior. The instance still picks up your `kuyacode.json`, but you can override or add configuration inline:
 
 ```javascript
-import { createOpencode } from "@kuyacode-ai/sdk"
+import { createKuyaCode } from "@kuyacode-ai/sdk"
 
-const kuyacode = await createOpencode({
+const kuyacode = await createKuyaCode({
   hostname: "127.0.0.1",
   port: 4096,
   config: {
@@ -72,9 +72,9 @@ kuyacode.server.close()
 If you already have a running instance of kuyacode, you can create a client instance to connect to it:
 
 ```javascript
-import { createOpencodeClient } from "@kuyacode-ai/sdk"
+import { createKuyaCodeClient } from "@kuyacode-ai/sdk"
 
-const client = createOpencodeClient({
+const client = createKuyaCodeClient({
   baseUrl: "http://localhost:4096",
 })
 ```

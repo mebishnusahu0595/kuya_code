@@ -87,10 +87,10 @@
             bunCpu = bunPlatform.cpu;
             bunOs = bunPlatform.os;
           };
-          mkOpencode = pkgs.callPackage ./nix/kuyacode.nix { };
+          mkKuyaCode = pkgs.callPackage ./nix/kuyacode.nix { };
           mkDesktop = pkgs.callPackage ./nix/desktop.nix { };
 
-          kuyacodePkg = mkOpencode {
+          kuyacodePkg = mkKuyaCode {
             inherit (packageJson) version;
             src = ./.;
             scripts = ./nix/scripts;

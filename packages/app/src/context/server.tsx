@@ -1,4 +1,4 @@
-import { createOpencodeClient } from "@kuyacode-ai/sdk/v2/client"
+import { createKuyaCodeClient } from "@kuyacode-ai/sdk/v2/client"
 import { createSimpleContext } from "@kuyacode-ai/ui/context"
 import { batch, createEffect, createMemo, createSignal, onCleanup } from "solid-js"
 import { createStore } from "solid-js/store"
@@ -92,7 +92,7 @@ export const { use: useServer, provider: ServerProvider } = createSimpleContext(
     const [healthy, setHealthy] = createSignal<boolean | undefined>(undefined)
 
     const check = (url: string) => {
-      const sdk = createOpencodeClient({
+      const sdk = createKuyaCodeClient({
         baseUrl: url,
         fetch: platform.fetch,
         signal: AbortSignal.timeout(3000),

@@ -51,7 +51,7 @@ import { SessionContextUsage } from "@/components/session-context-usage"
 import { usePermission } from "@/context/permission"
 import { useGlobalSync } from "@/context/global-sync"
 import { usePlatform } from "@/context/platform"
-import { createOpencodeClient, type Message, type Part } from "@kuyacode-ai/sdk/v2/client"
+import { createKuyaCodeClient, type Message, type Part } from "@kuyacode-ai/sdk/v2/client"
 import { Binary } from "@kuyacode-ai/util/binary"
 import { showToast } from "@kuyacode-ai/ui/toast"
 import { base64Encode } from "@kuyacode-ai/util/encode"
@@ -1042,7 +1042,7 @@ export const PromptInput: Component<PromptInputProps> = (props) => {
       }
 
       if (sessionDirectory !== projectDirectory) {
-        client = createOpencodeClient({
+        client = createKuyaCodeClient({
           baseUrl: sdk.url,
           fetch: platform.fetch,
           directory: sessionDirectory,

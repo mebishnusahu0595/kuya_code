@@ -1,5 +1,5 @@
 import type { McpServer } from "@agentclientprotocol/sdk"
-import type { OpencodeClient } from "@kuyacode-ai/sdk/v2"
+import type { KuyaCodeClient } from "@kuyacode-ai/sdk/v2"
 
 export interface ACPSessionState {
   id: string
@@ -14,7 +14,7 @@ export interface ACPSessionState {
 }
 
 export interface ACPConfig {
-  sdk: OpencodeClient
+  sdk: KuyaCodeClient
   defaultModel?: {
     providerID: string
     modelID: string

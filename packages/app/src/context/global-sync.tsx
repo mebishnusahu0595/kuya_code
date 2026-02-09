@@ -17,7 +17,7 @@ import {
   type VcsInfo,
   type PermissionRequest,
   type QuestionRequest,
-  createOpencodeClient,
+  createKuyaCodeClient,
 } from "@kuyacode-ai/sdk/v2/client"
 import { createStore, produce, reconcile, type SetStoreFunction, type Store } from "solid-js/store"
 import { Binary } from "@kuyacode-ai/util/binary"
@@ -198,7 +198,7 @@ function createGlobalSync() {
     const [store, setStore] = child(directory)
     const cache = vcsCache.get(directory)
     if (!cache) return
-    const sdk = createOpencodeClient({
+    const sdk = createKuyaCodeClient({
       baseUrl: globalSDK.url,
       fetch: platform.fetch,
       directory,
@@ -557,7 +557,7 @@ function createGlobalSync() {
         break
       }
       case "lsp.updated": {
-        const sdk = createOpencodeClient({
+        const sdk = createKuyaCodeClient({
           baseUrl: globalSDK.url,
           fetch: platform.fetch,
           directory,

@@ -1,7 +1,7 @@
-import { createOpencodeClient, createOpencodeServer } from "@kuyacode-ai/sdk"
+import { createKuyaCodeClient, createKuyaCodeServer } from "@kuyacode-ai/sdk"
 
-const server = await createOpencodeServer()
-const client = createOpencodeClient({ baseUrl: server.url })
+const server = await createKuyaCodeServer()
+const client = createKuyaCodeClient({ baseUrl: server.url })
 
 const input = await Array.fromAsync(new Bun.Glob("packages/core/*.ts").scan())
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 
 import { $ } from "bun"
-import { createOpencode } from "@kuyacode-ai/sdk"
+import { createKuyaCode } from "@kuyacode-ai/sdk"
 import { parseArgs } from "util"
 
 export const team = [
@@ -132,7 +132,7 @@ function getSection(areas: Set<string>): string {
   return "Core"
 }
 
-async function summarizeCommit(kuyacode: Awaited<ReturnType<typeof createOpencode>>, message: string): Promise<string> {
+async function summarizeCommit(kuyacode: Awaited<ReturnType<typeof createKuyaCode>>, message: string): Promise<string> {
   console.log("summarizing commit:", message)
   const session = await kuyacode.client.session.create()
   const result = await kuyacode.client.session
@@ -158,7 +158,7 @@ Commit: ${message}`,
   return result.trim()
 }
 
-export async function generateChangelog(commits: Commit[], kuyacode: Awaited<ReturnType<typeof createOpencode>>) {
+export async function generateChangelog(commits: Commit[], kuyacode: Awaited<ReturnType<typeof createKuyaCode>>) {
   // Summarize commits in parallel with max 10 concurrent requests
   const BATCH_SIZE = 10
   const summaries: string[] = []
@@ -221,7 +221,7 @@ export async function buildNotes(from: string, to: string) {
 
   console.log("generating changelog since " + from)
 
-  const kuyacode = await createOpencode({ port: 5044 })
+  const kuyacode = await createKuyaCode({ port: 5044 })
   const notes: string[] = []
 
   try {

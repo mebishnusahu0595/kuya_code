@@ -14,9 +14,9 @@ export const GenerateCommand = {
           {
             lang: "js",
             source: [
-              `import { createOpencodeClient } from "@kuyacode-ai/sdk`,
+              `import { createKuyaCodeClient } from "@kuyacode-ai/sdk`,
               ``,
-              `const client = createOpencodeClient()`,
+              `const client = createKuyaCodeClient()`,
               `await client.${operation.operationId}({`,
               `  ...`,
               `})`,
