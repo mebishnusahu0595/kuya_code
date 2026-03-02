@@ -1,201 +1,91 @@
-# KuyaCode
+# <img src="./kuyacode_banner_1772460877679.png" width="100%" alt="KuyaCode Banner" />
 
 <div align="center">
 
-**An open-source AI-powered coding agent that helps you write, understand, and modify code using large language models.**
+# ⚡ KuyaCode
+**The Next-Generation AI-Powered Open-Source Coding Agent**
 
-[Website](https://kuyacode.ai) • [Documentation](https://docs.kuyacode.ai) • [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=kuyacode.kuyacode)
-
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-
-</div>
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
+[![Bun Version](https://img.shields.io/badge/Bun-v1.3.5+-f9f9f9?logo=bun&logoColor=black)](https://bun.sh)
+[![Build Status](https://img.shields.io/badge/Build-Passing-green.svg)]()
+[![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red.svg)]()
 
 ---
 
-## Overview
+**KuyaCode** is a high-performance, terminal-first AI agent designed to revolutionize how you build, debug, and understand code. By leveraging the power of **Bun** and multi-model intelligence, it provides a seamless developer experience across the CLI, desktop, and IDE.
 
-KuyaCode is a terminal-based AI agent that can build anything. Available as a CLI tool, desktop application, and IDE extension, KuyaCode integrates seamlessly into your development workflow to accelerate coding with AI assistance.
+[Explore Features](#-key-features) • [Quick Start](#-getting-started) • [Contributing](#-contributing)
 
-### Key Features
+</div>
 
-- 🤖 **Multi-Model Support**: Works with any AI model via 20+ provider integrations (OpenAI, Anthropic, Google, AWS Bedrock, Azure, and more)
-- 💻 **Multiple Interfaces**: Available as a CLI, desktop app (Tauri-based), and VS Code extension
-- 🔧 **Agent-Driven Development**: Autonomous coding agent that can plan, implement, and test features
-- 🔌 **Model Context Protocol (MCP)**: Full support for extending capabilities with MCP servers
-- 🎯 **Context-Aware**: Automatically understands your codebase and current selection
-- 🚀 **Enterprise Ready**: Self-hosted options with security and compliance features
-- 📱 **Platform Support**: Available on macOS, Linux, and Windows
+## 🚀 Key Features
 
-## Quick Start
+- 🤖 **Multi-Model Intelligence**: Native integration with 20+ AI providers including OpenAI, Anthropic, Google, and AWS Bedrock.
+- 💻 **Unified Experience**: Switch effortlessly between the CLI, Tauri-based desktop application, and VS Code extension.
+- 🔧 **Autonomous Agents**: Let the agent plan, implement, and test features independently while you supervise.
+- 🔌 **MCP Native**: Full support for the **Model Context Protocol**, allowing you to extend capabilities with custom tools and servers.
+- 🎯 **Deep Context Awareness**: Automatically indexes and understands your entire codebase for hyper-relevant suggestions.
+- ⚡ **Built for Speed**: Powered by **Bun**, ensuring sub-millisecond start times and blazing fast execution.
 
-### Installation
+## 🛠 Tech Stack
 
-The easiest way to install KuyaCode is through the install script:
+KuyaCode is built with the most modern and efficient technologies:
 
-```bash
-curl -fsSL https://kuyacode.ai/install | sh
-```
+| Layer | Technology |
+| :--- | :--- |
+| **Runtime** | [Bun](https://bun.sh) (High-performance JavaScript runtime) |
+| **Frontend** | [SolidJS](https://www.solidjs.com) (Fine-grained reactivity) |
+| **API / Backend** | [Hono](https://hono.dev) (Ultrafast web framework) |
+| **Styling** | [Tailwind CSS v4](https://tailwindcss.com) |
+| **Infrastructure** | [SST](https://sst.dev) & [Turbo](https://turbo.build) |
+| **Language** | [TypeScript](https://www.typescriptlang.org) |
 
-Or use your package manager:
-
-```bash
-# macOS (Homebrew)
-brew install kuyacode
-
-# Nix
-nix profile install github:anomalyco/kuyacode
-```
-
-### Basic Usage
-
-Start an interactive session:
-
-```bash
-kuyacode
-```
-
-Run with a specific AI model:
-
-```bash
-kuyacode --model claude-3-5-sonnet-20241022
-```
-
-Configure API keys:
-
-```bash
-kuyacode auth login
-```
-
-## Architecture
-
-This is a monorepo containing the complete KuyaCode ecosystem:
-
-```
-├── packages/
-│   ├── kuyacode/       # Core CLI application
-│   ├── desktop/        # Tauri-based desktop app
-│   ├── app/            # Web application
-│   ├── console/        # Management console
-│   ├── enterprise/     # Enterprise features
-│   ├── sdk/            # Client SDKs
-│   ├── plugin/         # Plugin system
-│   ├── web/            # Marketing website
-│   └── docs/           # Documentation
-├── sdks/
-│   └── vscode/         # VS Code extension
-├── infra/              # Infrastructure as code (SST)
-└── github/             # GitHub Actions integration
-```
-
-## Development
+## 📦 Getting Started
 
 ### Prerequisites
 
-- **Bun** >= 1.3.5 (primary runtime)
-- **Node.js** >= 22 (for certain tooling)
-- **Rust** (for desktop app only)
+- [Bun](https://bun.sh) installed on your system.
+- An API key for your preferred AI model (OpenAI, Anthropic, etc.).
 
-### Setup
+### Local Development
 
-1. Clone the repository:
+To get started with the development environment:
+
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/anomalyco/kuyacode.git
+   git clone https://github.com/mebishnusahu0595/kuyacode.git
    cd kuyacode
    ```
 
-2. Install dependencies:
+2. **Install dependencies**:
    ```bash
    bun install
    ```
 
-3. Run the CLI in development mode:
+3. **Run the development server**:
    ```bash
    bun run dev
    ```
+   > [!TIP]
+   > The `dev` command initializes the browser-conditioned environment for the core service.
 
-### Available Scripts
+## 🤝 Contributing
 
-```bash
-# Type checking across all packages
-bun run typecheck
+We ❤️ open-source! Whether you're fixing a bug, adding a feature, or improving documentation, your contributions are welcome.
 
-# Run the core kuyacode CLI
-bun run --cwd packages/kuyacode dev
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-# Start the desktop app
-bun run --cwd packages/desktop tauri dev
+## 📄 License
 
-# Format code
-bun run format
-
-# Generate changelog
-bun run script/changelog.ts
-```
-
-## Project Structure
-
-### Core Packages
-
-- **`packages/kuyacode`**: Main CLI application with agent capabilities, provider integrations, and MCP support
-- **`packages/desktop`**: Native desktop application built with Tauri v2
-- **`packages/app`**: Web-based UI for KuyaCode
-- **`packages/sdk`**: JavaScript/TypeScript SDK for integrating with KuyaCode
-
-### Infrastructure
-
-- **`infra/`**: SST (Serverless Stack) configuration for deployment
-  - Deployed to Cloudflare (primary)
-  - Supports Stripe integration for billing
-  - Multi-environment support (dev/staging/production)
-
-### Extensions & Integrations
-
-- **`sdks/vscode`**: VS Code extension for inline KuyaCode integration
-- **`github/`**: GitHub Actions for CI/CD automation
-- **`packages/plugin`**: Plugin system for extending KuyaCode functionality
-
-## Technologies
-
-- **Runtime**: Bun, Node.js
-- **Languages**: TypeScript, Rust (Tauri)
-- **Frontend**: SolidJS, TailwindCSS
-- **Backend**: Hono, SST
-- **AI SDKs**: Vercel AI SDK with 20+ provider integrations
-- **Build Tools**: Turbo, Vite, Parcel
-- **Package Manager**: Bun (monorepo via workspaces)
-
-## Contributing
-
-We welcome contributions! Please see our [contributing guidelines](CONTRIBUTING.md) for details.
-
-### Development Workflow
-
-1. Create a feature branch
-2. Make your changes
-3. Run `bun run typecheck` to ensure types are correct
-4. Submit a pull request
-
-## License
-
-KuyaCode is open source software licensed under the [MIT License](LICENSE).
-
-## Links
-
-- [Official Website](https://kuyacode.ai)
-- [Documentation](https://docs.kuyacode.ai)
-- [GitHub Issues](https://github.com/anomalyco/kuyacode/issues)
-- [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=kuyacode.kuyacode)
-
-## Support
-
-- **Community**: Join our discussions on GitHub
-- **Enterprise**: Contact us for enterprise support and self-hosted options
-- **Issues**: Report bugs or request features via GitHub Issues
+KuyaCode is distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 
 <div align="center">
-
-Built with ❤️ by the KuyaCode team
-
+Built with ❤️ for the open-source community.
 </div>
+
